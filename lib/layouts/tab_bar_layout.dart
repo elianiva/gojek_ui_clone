@@ -19,6 +19,7 @@ class _TabBarLayoutState extends State<TabBarLayout> {
       length: widget.tabs.length,
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           backgroundColor: GojekColor.green,
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(30),
