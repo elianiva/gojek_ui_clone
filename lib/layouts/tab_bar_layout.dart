@@ -46,6 +46,7 @@ class _TabBarLayoutState extends State<TabBarLayout> {
             ),
           ),
         ),
+        backgroundColor: GojekColor.white,
         body: Stack(
           children: [
             TabBarView(children: widget.screens),

@@ -35,7 +35,10 @@ class _SearchBarState extends State<SearchBar> {
                 ),
               ),
               hintText: 'Cari layanan, makanan, & tujuan',
-              hintStyle: const TextStyle(fontSize: GojekFontSize.medium1),
+              hintStyle: const TextStyle(
+                fontSize: GojekFontSize.medium1,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
         ),
@@ -45,9 +48,9 @@ class _SearchBarState extends State<SearchBar> {
           height: 52,
           child: CircleAvatar(
             radius: 32.0,
-            backgroundColor: GojekColor.softGrey,
+            backgroundColor: GojekColor.grey,
             child: Padding(
-              padding: const EdgeInsets.all(2.0),
+              padding: const EdgeInsets.all(1.0),
               child: ClipOval(child: Image.asset("assets/images/yotsuba.png")),
             ),
           ),

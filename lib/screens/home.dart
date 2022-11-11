@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gojek_clone/widgets/balance_card.dart';
 import 'package:gojek_clone/widgets/search.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -31,7 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: _scrollController,
         children: const [
           IntrinsicHeight(child: SearchBar()),
-          Text("Yes")
+          SizedBox(height: 16.0),
+          BalanceCard(),
         ],
       ),
     );
