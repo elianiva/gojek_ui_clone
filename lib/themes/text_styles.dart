@@ -3,6 +3,11 @@ import 'package:gojek_clone/themes/colors.dart';
 import 'package:gojek_clone/themes/font_sizes.dart';
 
 class GojekTextStyles {
+  static const TextStyle textBold = TextStyle(
+    fontSize: GojekFontSize.medium1,
+    fontWeight: FontWeight.bold,
+  );
+
   static const TextStyle textButtonBlack = TextStyle(
     color: GojekColor.blackText,
     fontSize: GojekFontSize.medium2,
