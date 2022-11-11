@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gojek_clone/themes/colors.dart';
+import 'package:gojek_clone/widgets/bottom_nav.dart';
 
 class TabBarLayout extends StatefulWidget {
   TabBarLayout({super.key, required this.tabs, required this.screens});
@@ -22,7 +23,8 @@ class _TabBarLayoutState extends State<TabBarLayout> {
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(30),
             child: Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0, bottom: 16.0),
+              padding: const EdgeInsets.only(
+                  left: 8.0, right: 8.0, top: 8.0, bottom: 14.0),
               child: Container(
                 padding: const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
@@ -31,7 +33,7 @@ class _TabBarLayoutState extends State<TabBarLayout> {
                 ),
                 child: TabBar(
                   tabs: widget.tabs,
-                  labelPadding: const EdgeInsets.all(4.0),
+                  labelPadding: const EdgeInsets.all(2.0),
                   labelColor: GojekColor.green,
                   unselectedLabelColor: GojekColor.white,
                   indicator: BoxDecoration(
@@ -43,7 +45,19 @@ class _TabBarLayoutState extends State<TabBarLayout> {
             ),
           ),
         ),
-        body: TabBarView(children: widget.screens),
+        body: Stack(
+          children: [
+            TabBarView(children: widget.screens),
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: GestureDetector(
+                child: const FloatingBottomNav(),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
