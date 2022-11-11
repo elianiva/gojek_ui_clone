@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gojek_clone/themes/colors.dart';
-import 'package:gojek_clone/themes/text_styles.dart';
+import 'package:gojek_clone/widgets/labeled_button_icon.dart';
 
 class FloatingBottomNav extends StatefulWidget {
   const FloatingBottomNav({super.key});
@@ -11,28 +11,11 @@ class FloatingBottomNav extends StatefulWidget {
 
 class FloatingBottomNavState extends State<FloatingBottomNav> {
   final List<Widget> menu = [
-    NavigationItem(text: "GoRide", iconPath: "assets/icons/ic_indoride.png"),
-    NavigationItem(text: "GoCar", iconPath: "assets/icons/ic_indocar.png"),
-    NavigationItem(text: "GoFood", iconPath: "assets/icons/ic_indofood.png"),
-    NavigationItem(text: "GoSend", iconPath: "assets/icons/ic_indosend.png"),
-  ]
-      .map(
-        (item) => Column(
-          children: [
-            Container(
-              alignment: Alignment.center,
-              width: 32.0,
-              height: 32.0,
-              child: Image.asset(
-                item.iconPath,
-              ),
-            ),
-            const SizedBox(height: 10.0),
-            Text(item.text, style: GojekTextStyles.textParagraphBlack)
-          ],
-        ),
-      )
-      .toList();
+    LabeledButtonIcon(label: "GoRide", iconPath: "assets/icons/ic_indoride.png"),
+    LabeledButtonIcon(label: "GoCar", iconPath: "assets/icons/ic_indocar.png"),
+    LabeledButtonIcon(label: "GoFood", iconPath: "assets/icons/ic_indofood.png"),
+    LabeledButtonIcon(label: "GoSend", iconPath: "assets/icons/ic_indosend.png"),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +24,8 @@ class FloatingBottomNavState extends State<FloatingBottomNav> {
       child: Card(
         color: GojekColor.white,
         elevation: 8.0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(64.0)),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(64.0)),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 28.0),
           child: Row(
@@ -52,11 +36,4 @@ class FloatingBottomNavState extends State<FloatingBottomNav> {
       ),
     );
   }
-}
-
-class NavigationItem {
-  NavigationItem({required this.text, required this.iconPath});
-
-  String text;
-  String iconPath;
 }

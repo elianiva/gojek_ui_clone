@@ -27,12 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(20.0),
       child: ListView(
         controller: _scrollController,
         children: const [
           IntrinsicHeight(child: SearchBar()),
-          SizedBox(height: 16.0),
+          SizedBox(height: 20.0),
           BalanceCard(),
         ],
       ),
