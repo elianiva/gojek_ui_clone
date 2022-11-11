@@ -9,8 +9,31 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  ScrollController? _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("Home"));
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: ListView(
+        controller: _scrollController,
+        children: const [
+          IntrinsicHeight(child: SearchBar()),
+          Text("Yes")
+        ],
+      ),
+    );
   }
 }

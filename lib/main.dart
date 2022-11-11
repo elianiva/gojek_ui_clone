@@ -4,6 +4,7 @@ import 'package:gojek_clone/screens/home.dart';
 import 'package:gojek_clone/screens/order.dart';
 import 'package:gojek_clone/screens/promo.dart';
 import 'package:gojek_clone/themes/text_styles.dart';
+import 'package:gojek_clone/themes/theme_data.dart';
 
 import 'layouts/tab_bar_layout.dart';
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Gojek Clone',
+      theme: gojekThemeData,
       home: TabBarLayout(
         tabs: tabs,
         screens: const [
